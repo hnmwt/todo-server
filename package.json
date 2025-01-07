@@ -4,7 +4,12 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": " npx tsx src/index.ts"
+    "dev": " npx tsx src/index.ts",
+    "prepare": "husky",
+    "fix:lint": "eslint --fix"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": "npm run fix:lint"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +18,8 @@
   "devDependencies": {
     "@prisma/client": "^6.1.0",
     "express": "^4.21.2",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.3.0",
     "prisma": "^6.1.0",
     "ts-node": "^10.9.2",
     "tsx": "^4.19.2"
